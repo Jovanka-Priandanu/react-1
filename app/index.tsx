@@ -1,80 +1,75 @@
-import { Text, View, StyleSheet, Image } from "react-native";
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { Link } from "expo-router";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image
+} from "react-native";
+import { Link } from 'expo-router';
+import { CustomCard } from "@/components/Card";
+import { rgbaColor } from "react-native-reanimated/lib/typescript/reanimated2/Colors";
 
 export default function Index() {
   return (
-    <View style={style.container}>
-      <Image
-        style={style.tinyLogo}
-        source={require('./img/1.jpg')}
-      />
-      <Text style={style.Textname}>
-        Jovanka Priandanu
-      </Text>
-      <Text style={style.Textdesc}>Lorem Ipsum</Text>
-      <View style={style.containerLink}>
-        <Ionicons name="school" size={32} color="black" style={style.Iconstyle} />
-        <Link href="/edu" style={style.Linkstyle}>Education</Link>
+    <View>
+      <View style={style.container}>
+        <Image
+          style={style.tinyLogo}
+          source={require('./img/1.jpg')}
+        />
+        <Text style={[style.textName, style.allText]}>
+          Jovanka Priandanu
+        </Text>
+        <Link style={style.linkText} href="/exp">Experience</Link>
+        <Text style={[style.subText, style.allText]}>
+          |ShortList|
+        </Text>
       </View>
+      <View style={style.border}>
+        <CustomCard name="Figma" con="UI/UX Design" number="1" />
+        <CustomCard name="Aseprite" con="2D Pixelart" number="2" />
+        <CustomCard name="Godot Engine" con="Game Engine" number="3" />
+      </View>
+
     </View>
   );
 }
 
 const style = StyleSheet.create({
-  container: {
-    backgroundColor: "crimson",
-    height: 300,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  Textname: {
-    fontSize: 24,
-    fontWeight: "bold",
+  allText: {
+    marginBottom: 3,
     color: "white",
-    textAlign: "center",
   },
-
-  Textdesc: {
-    fontSize: 12,
-    color: 'white',
-    marginBottom: 12,
-    marginTop: 12,
-    textAlign: "center",
+  container: {
+    backgroundColor: "#6c7a89",
+    height: 250,
+    borderBottomEndRadius: 15,
+    borderBottomStartRadius: 15,
+    justifyContent: "center",
+    alignItems: "center"
   },
-
-  Linkstyle: {
-    color: "black",
-    fontWeight: 'bold',
-    textAlign: 'center',
-    flex: 1,
+  textName: {
+    fontSize: 24
   },
-
-  Iconstyle: {
-    position: 'absolute',
-    left: 10,
+  subText: {
+    fontSize: 14,
   },
-
   tinyLogo: {
     width: 150,
     height: 150,
-    borderRadius: 125,
-    marginBottom: 8,
-    borderColor: 'white',
-    borderWidth: 3,
+    borderRadius: 100,
+    borderColor: "white",
+    borderWidth: 5,
+  },
+  border: {
+    top: -20,
+    paddingLeft: 20,
+    paddingRight: 25,
   },
 
-  containerLink: {
-    backgroundColor: 'whitesmoke',
-    width: 200,
-    height: 50,
-    borderRadius: 90,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 10,
-    position: 'relative',
-  },
-});
+  linkText: {
+    color: "#1d3146",
+    fontSize: 18,
+
+  }
+
+})
