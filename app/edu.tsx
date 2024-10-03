@@ -1,30 +1,35 @@
-import { Text, View, StyleSheet, ScrollView } from "react-native";
-import AntDesign from '@expo/vector-icons/AntDesign';
+import { Text, View, StyleSheet, ScrollView, Image } from "react-native";
 
 export default function Exp() {
     return (
         <ScrollView>
             <View style={styles.section}>
-                <Text style={styles.header}>Work Experience</Text>
+                <Text style={styles.header}>Education History</Text>
 
                 <View style={styles.container}>
-                    <AntDesign name="laptop" size={24} color="#6c7a89" style={styles.icon} />
+                    <Image
+                        style={styles.logo}
+                        source={require('./img/logo-smk.png')}
+                    />
                     <View style={styles.info}>
-                        <Text style={styles.label}>IT Support:</Text>
+                        <Text style={styles.label}>SMK PANJATEK:</Text>
                         <View style={styles.row}>
-                            <Text style={styles.value}>CV ProtonTechindo</Text>
-                            <Text style={styles.lenght}>18 January - April 2021</Text>
+                            <Text style={styles.value}>Computer And Networking Engineering</Text>
+                            <Text style={styles.lenght}>2019 - 2022</Text>
                         </View>
                     </View>
                 </View>
 
                 <View style={styles.container}>
-                    <AntDesign name="setting" size={24} color="#6c7a89" style={styles.icon} />
+                    <Image
+                        style={styles.logo}
+                        source={require('./img/logo-lp3i.png')}
+                    />
                     <View style={styles.info}>
-                        <Text style={styles.label}>Engineer:</Text>
+                        <Text style={styles.label}>LP3I Polytechnic:</Text>
                         <View style={styles.row}>
-                            <Text style={styles.value}>PT Dubbs Energi Teknologi Indonesia</Text>
-                            <Text style={styles.lenght}>5 August - 5 October 2024</Text>
+                            <Text style={styles.value}>Informatics Management</Text>
+                            <Text style={styles.lenght}>2022 - 2025</Text>
                         </View>
                     </View>
                 </View>
@@ -56,12 +61,16 @@ const styles = StyleSheet.create({
         padding: 15,
         backgroundColor: 'white',
     },
-    icon: {
-        marginRight: 10,
-    },
     info: {
         flex: 1,
     },
+
+    logo: {
+        width: 50,
+        height: 70,
+        marginRight: 10,
+    },
+
     label: {
         fontSize: 16,
         fontWeight: '600',

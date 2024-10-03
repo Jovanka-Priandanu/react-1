@@ -1,29 +1,31 @@
 import { Text, View, StyleSheet } from 'react-native';
+import { Link } from 'expo-router';
 
 export const CustomCard = (props: any) => {
     return (
-        <View style={styles.container}>
-            <View style={styles.leftbox}>
-                <Text style={styles.title}>{props.name}</Text>
-                <Text>{props.con}</Text>
+        <Link href={props.path} style={styles.section}>
+            <View>
+                <View style={styles.leftbox}>
+                    <Text style={styles.title}>{props.label}</Text>
+                    <Text>{props.desc}</Text>
+                </View>
+                <View style={styles.rightbox}>
+                    {/* <Text style={styles.number}>{props.number}</Text> */}
+                </View>
             </View>
-            <View style={styles.rightbox}>
-                <Text style={styles.number}>{props.number}</Text>
-            </View>
-        </View>
+        </Link>
     )
 }
 const styles = StyleSheet.create({
-    container: {
+    section: {
         display: 'flex',
         flexDirection: 'row',
-        backgroundColor: 'whitesmoke',
+        backgroundColor: 'white',
         padding: 25,
         borderRadius: 10,
         marginTop: 10,
-        borderColor: "black",
-        borderWidth: 2,
     },
+
     leftbox: {
         flex: 2,
     },
